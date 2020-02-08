@@ -268,14 +268,6 @@ h1 {
 
 /* MEDIA / RESPONZIVE */ 
 
-@media(max-width: 1280px){
-
-
-
-
-}
-
-
 @media(max-width: 960px){
 	
 	/* HEADER */
@@ -315,7 +307,7 @@ h1 {
 @media(max-width: 560px){
 	.card-content p {
 		letter-spacing: 0px;
-		font-size: 0.8em;
+		font-size: 1rem;
 	}
 
 	.box > img {
@@ -336,7 +328,8 @@ h1 {
 @media(max-width: 485px){
 	
 	.box-container { 
-		display: block;
+		display: block; 
+	}
 }
 
 @media screen and (max-width: 490px) {
@@ -360,19 +353,19 @@ h1 {
    	 		height: auto;
    	 	}
 
+   	 .box {
+   	 	margin-bottom: 3rem;
+   	 	margin-top: 1rem;
+   	 }	
+
    	 .social-icon-content {
    	 	width: 100%;
    	 }
 
    	 .social-icon-content img {
-		width: 30px;
+		width: 35px;
 		height: auto;
 		padding: 0px;
-		margin: 1rem;
-	}
-	
-	.box-image img {
-			order: 1;
-		}
-		
+		margin: 1.3rem;
+	}	
 }
