@@ -1,14 +1,24 @@
 :root {
-	--primary-color: #1d2731;
-	--overlay-color: #0b3c5d;
-	--contrast-color: #d9b310;
-	--background-color: white;
-	--text-color: black;
+
+	--primary-color: rgba(0, 0, 0, 1);
+	--background-color: rgba(252, 252, 252, 1);
+
+	--contrast-color: #2186DE;
+	--text-color: rgba(0, 0, 0, 1);
+
 	--menu-speed: 0.75s;
 }
 
+/* fonts 
+
+Headings: font-family: 'Montserrat', sans-serif; 
+Body: font-family: 'Inconsolata', monospace;
+
+*/
+
+
 /* _____________________________________ SETTINGS _____________________________________ */
-*, html { box-sizing: border-box; font-size: 1rem; }
+*, html { box-sizing: border-box; font-size: 1.0rem; }
 *, *:before, *:after { box-sizing: inherit; }
 
 /* clearfix */
@@ -28,19 +38,26 @@ a {
 
 h1, h2, h3 {
 	text-transform: uppercase;
-	padding: 0px; 
+	padding: 0px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;  
 }
 
 h2 {
 	margin-bottom: 0px;
 }
 
+h1 > span {
+	font-size: 3rem;
+	color: var(--contrast-color);
+}
+
 /* _____________________________________ SETTINGS  _____________________________________ */
 
 body {
 	margin: 0;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 1.3rem;
+	font-family: 'Inconsolata', monospace;
+	font-size: 1.5rem;
 	line-height: 1.5;
 	color: var(---text-color);
 	overflow-x: hidden;
@@ -66,7 +83,7 @@ p > span {
 
 h1 {
 	font-size: 3.0rem;
-	margin: 1.2rem 0.5rem;
+	margin: 0.5rem 0.3rem;
 	text-align: center;
 	color: var(--text-color);
 
@@ -93,7 +110,12 @@ h1 {
 	position: absolute;
 	top: 0;
 	left: 0;
-	overflow: hidden; /* no scroll bars */
+
+		background: url('../img/main_header.webp');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		overflow: hidden;
 }
 
 .fullscreen-image > img {
@@ -107,9 +129,9 @@ h1 {
 	width: 100vw;
 	top: 0;
 	left: 0;
-	background: var(--text-color);
+	background: var(--primary-color);
 	z-index: 1;
-	opacity: 0.55;
+	opacity: 0.75;
 }
 
 .header-content {
@@ -135,27 +157,59 @@ h1 {
 }
 
 .btn {
-	background: var(--text-color);
+	background: none;
+	border: 1px solid white;
 	color: var(--background-color);
 	font-size: 1.2rem;
 	padding: 1rem 2rem;
 	text-decoration: none;
 	display: inline-block;
-	margin-top: 1.5rem;
+	margin: 1.5rem 0rem;
 	cursor: pointer;
 	text-transform: uppercase;
 }
 
-.btn:hover {
+.btn2 {
+	background: white;
+	border: 2px solid var(--contrast-color);
+	color: black;
+	font-size: 1.0rem;
+	font-weight: 600;
+	padding: 1rem 2rem;
+	text-decoration: none;
+	display: inline-block;
+	margin: 1.5rem 0rem;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.btn3 {
+	background: black;
+	border: 1px solid var(--contrast-color);
+	color: white;
+	font-size: 1.2rem;
+	padding: 1rem 2rem;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.5rem 1.5rem;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+
+.btn:hover, 
+.btn2:hover, 
+.btn3:hover {
 	opacity: 0.8;
+	color: var(--contrast-color);
 }
 
 
 	.social-icon-content img {
-		margin: 3rem 1rem;
+		margin: 2vh 2vw;
 		flex: 1;
-		width: auto;
-		height: 40px;
+		width: 5%;
+		height: auto;
 	}
 
 	.social-icon-content img:hover {
@@ -171,11 +225,67 @@ h1 {
 	min-height: 100vh;
 	min-width: 100vw;
 }
-	/* hlavny obrazok boxu */
-	.box-image {
+	/* OBRAZKY BOXOV - KARIET */
+	.box-image1 {
 		display: flex;
 		flex: 1;
+		background: url('../img/cards/card1.webp');
+		background-position: center;
+	  	background-repeat: no-repeat;
+	  	background-size: cover;
+		overflow: hidden;
 	}
+
+	.box-image2 {
+		display: flex;
+		flex: 1;
+		background: url('../img/cards/card2.webp');
+		background-position: center;
+	  	background-repeat: no-repeat;
+	  	background-size: cover;
+		overflow: hidden;
+	}
+
+	.box-image3 {
+		display: flex;
+		flex: 1;
+		background: url('../img/cards/card3.webp');
+		background-position: center;
+	  	background-repeat: no-repeat;
+	  	background-size: cover;
+		overflow: hidden;
+	}
+
+	.box-image4 {
+		display: flex;
+		flex: 1;
+		background: url('../img/cards/card4.jpg');
+		background-position: center;
+	  	background-repeat: no-repeat;
+	  	background-size: cover;
+		overflow: hidden;
+	}
+
+	.box-image5 {
+		display: flex;
+		flex: 1;
+		background: url('../img/cards/card5.webp');
+		background-position: center;
+	  	background-repeat: no-repeat;
+	  	background-size: cover;
+		overflow: hidden;
+	}
+
+	.box-image6 {
+		display: flex;
+		flex: 1;
+		background: url('../img/cards/card6.jpeg');
+		background-position: center;
+	  	background-repeat: no-repeat;
+	  	background-size: cover;
+		overflow: hidden;
+	}
+
 
 		.box-image img {
 			width: 100%;
@@ -218,15 +328,13 @@ h1 {
 	align-items: center;
 	text-align: center;
 	line-height: 1.9rem;
-	letter-spacing: 0.04rem;
+	letter-spacing: 0.03rem;
 	color: var(--text-color);
 	padding: 0.5rem 3rem;
 	margin: 0px;
 }
 
 	
-
-
 .box {
 	display: flex;
 	flex: 1;
@@ -237,14 +345,14 @@ h1 {
 }
 
  .box > img {
- 	max-width: 30%;
- 	margin: 0.5em;
+ 	max-width: 25%;
+ 	margin: 1.0em;
  }
 
  .box p {
  	align-items: center;
 	text-align: center;
-	font-size: 0.9rem;
+	font-size: 1.1rem;
 	line-height: 1.8rem;
 	letter-spacing: 0.05rem;
  }
@@ -255,20 +363,78 @@ h1 {
  		text-align: center;
  		justify-content: center;
  		align-items: baseline;
+ 		margin-bottom: 2rem;
  	}
 
 	 	.git img {
-		 	padding: 5px 10px;
+		 	padding: 0px 1rem;
 		 	height: 3.1rem;
 	 		width: auto;
 	 	}
 
+.quote {
+	font-size: 0.69rem;
+	margin: 0px;
+	padding: 0px;
+}
 
+.article-img {
+	width: 85%;
+	height: auto;
+	margin-bottom: 1rem;
+}
+
+
+/* FOOTER */
+
+footer {
+	display: flex;
+	color: white;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 12vh;
+	width: 100vw;
+	background-color: black;
+}
+
+	.autor > div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		flex: 3;
+		height: 100%;
+	}
+
+	.autor span {
+		color: var(--contrast-color);
+		font-size: 1.2rem;
+	}
+
+	.footer-div {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		flex: 2;
+		height: 100%;
+	}
+
+	.footer-div > a > img, 
+	.footer-div > .btn {
+		height: 2.5rem;
+		width: auto;
+		border: 2px solid black;
+		margin: 0rem 1.3rem;
+	}
+
+/* FOOTER */
 	
 
 /* MEDIA / RESPONZIVE */ 
 
-@media(max-width: 960px){
+@media(max-width: 1100px){
 	
 	/* HEADER */
 	.container {
@@ -295,25 +461,52 @@ h1 {
 	}
 
 	 .btn {
-		margin: 0px;
+		margin: 0rem 0rem 0.5rem 0rem;
 	}
 
 	/* BODY */
 	.card {
-		display: block;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.box-image1 {
+		display: none;
+	}
+
+	.box-image2,
+	.box-image3,
+	.box-image4,
+	.box-image5,
+	.box-image6 {
+		order: 1;
+		display: inline;
+		flex: none;
+		height: 50vh;
+	}
+
+	.card-content {
+		-webkit-order: 2;
+		-moz-order: 2;
+		-ms-order: 2;
+		-o-order: 2;
+		order: 2;
 	}
 }
 
 
 @media(max-width: 780px){
 
-	.fullscreen-image > img {
-			min-height: 100%;
-			min-width: 1024px;
-			top: 0;
-			right: 0;
-			margin: 0px auto;
-			}
+	.fullscreen-image {
+		background-position: 61% 0%;
+	  	background-repeat: no-repeat;
+	  	background-size: cover;
+		overflow: hidden;
+		}
+
+	footer > .footer-div {
+ 		display: none;
+ 	}
 }	
 
 @media(max-width: 560px){
@@ -323,7 +516,7 @@ h1 {
 	}
 
 	.box > img {
-		width: 30%;
+		width: 35%;
 		margin: 0em;
 	}
 
@@ -342,18 +535,26 @@ h1 {
 	.box-container { 
 		display: block; 
 	}
+
+	h2 {
+		font-size: 1.2rem;
+	}
+
+	.git {
+		order: 2;
+	}
 }
 
 @media screen and (max-width: 490px) {
 /* start of phone styles */
 
 	.header-content h1 {
-	margin-top: 0.3rem;
+	 margin-top: 0rem;
    	 font-size: 1.6em; }
 
    	 .header-content p {
    	 	font-size: 0.8em;
-   	 	margin-bottom: 0px;
+   	 	margin: 0.2rem 0rem;
    	 }
 
    	 .header-content h2 {
@@ -372,18 +573,22 @@ h1 {
 
    	 .social-icon-content {
    	 	width: 100%;
+   	 	margin: 1.2rem 0rem;
    	 }
 
    	 .social-icon-content img {
-		width: 25px;
-		height: auto;
-		padding: 0px;
-		margin: 1.1em;
+		width: auto;
+	    height: 34px;
+	    padding: 0px;
+	    margin: 0.5rem;
 	}
-}
 
-@media screen and (max-width: 380px) {
-	.fullscreen-image > img {
-			padding-right: 600px;
-			}
+	.box-container {
+ 		margin-bottom: 0rem;
+ 	}
+
+ 	p .text {
+ 		margin: 0px;
+ 	}
+
 }
