@@ -1,0 +1,890 @@
+/* _____________________________________ SETTINGS _____________________________________ */
+*,
+html {
+    box-sizing: border-box;
+    font-size: 1rem;
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    position: relative;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #04724d;
+    --bright-color: white;
+    --dark-color: #0a0a0a;
+    --grey-color: #f5f5f5;
+
+    --head-font: "Oswald", sans-serif;
+    --text-font: "Montserrat", sans-serif;
+    /* --- FONTS ---- 
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Oswald', sans-serif;          */
+}
+
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+    font-family: var(--head-font);
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-family: var(--text-font);
+    margin-bottom: 0px;
+    font-size: 2rem;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-family: var(--text-font);
+    font-size: 1rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+.greyscale {
+    filter: grayscale(100%);
+}
+
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-snap-type: y mandatory;
+    scroll-snap-align: center;
+}
+
+p,
+span {
+    font-family: var(--text-font);
+}
+
+.line-bold {
+    width: 60px;
+    height: 3px;
+    background-color: var(--dark-color);
+    margin: 10px auto;
+}
+
+.line-post {
+    width: 5rem;
+    height: 3px;
+    margin-bottom: 1rem;
+    background-color: var(--dark-color);
+}
+
+/* _____________________________________ SETTINGS  _____________________________________ */
+
+
+
+/* ----------------- NAVIGACIA / MENU ----------------- */
+.navbar {
+    padding: 0;
+    font-family: var(--text-font);
+    font-size: 0.5rem;
+    background-color: rgba(10, 10, 10, 0.30);
+}
+
+.navbar a {
+    font-size: 0.8rem;
+    margin: 0rem 0.5rem;
+    text-transform: uppercase;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--bright-color);
+}
+
+.navbar-brand {
+    margin: 0rem 1rem;
+}
+
+.navbar-toggler {
+    margin-right: 0.5rem;
+}
+
+#MAIN-NAV .nav-link img {
+    width: 1rem;
+}
+
+/* ----------------- NAVIGACIA / MENU ----------------- */
+
+
+
+/* ----------------- HEADER SEKCIA ----------------- */
+#HEADER, 
+#VIDEO-BANNER {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--dark-color);
+}
+
+#HEADER::after,
+#VIDEO-BANNER::after {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#HEADER video,
+#VIDEO-BANNER video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    object-fit: cover;
+}
+
+#HEADER .texture,
+#VIDEO-BANNER .texture {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    background: url("../img/etc/texture.png");
+}
+
+#HEADER .header-content,
+#VIDEO-BANNER .header-content {
+    position: relative;
+    color: red;
+    z-index: 20;
+    text-align: center;
+    color: var(--bright-color);
+}
+
+#HEADER .header-content h1,
+#VIDEO-BANNER .header-content h1 {
+    color: var(--background-color);
+    font-size: 7rem;
+    letter-spacing: 1px;
+    font-family: var(--head-font);
+    margin-bottom: 0.5rem;
+}
+
+#HEADER .header-btn,
+#VIDEO-BANNER .header-btn {
+    border: 1px solid var(--bright-color);
+    color: var(--bright-color);
+    font-size: 1.8rem;
+    padding: 1rem 4rem;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: var(--dark-color);
+    z-index: 25;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-family: var(--head-font);
+}
+
+#VIDEO-BANNER .header-btn {
+    border: 1px solid var(--bright-color);
+    color: var(--bright-color);
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: var(--dark-color);
+    z-index: 25;
+    margin-top: 0.7rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-family: var(--head-font);
+
+}
+
+#HEADER .header-btn:hover,
+#VIDEO-BANNER .header-btn:hover {
+    background-color: var(--dark-color);
+    transform: scale(1.05);
+    border: 1px dotted var(--bright-color);
+}
+
+/* ----------------- HEADER SEKCIA ----------------- */
+
+/* ----------------- MAIN CONTENT PAGE WRAPPER ----------------- */
+#PAGE-WRAPPER {
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ----------------- MAIN CONTENT PAGE WRAPPER ----------------- */
+
+/* ----------------- PROFIL CONTENT----------------- */
+#PROFIL {
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 2px solid var(--dark-color);
+}
+
+#PROFIL h2 {
+    margin: 1rem 0rem;
+    display: block;
+}
+
+#PROFIL .five-box {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+#PROFIL .character-box {
+    width: 15%;
+    height: auto;
+    margin: 0rem 1rem;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+#PROFIL .character-box img {
+    max-width: 30%;
+    max-height: 30%;
+    margin-bottom: 0.5rem;
+}
+
+#PROFIL .character-box h4 {
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 700;
+}
+
+#PROFIL .character-box p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+#PROFIL .gallup {
+    color: grey;
+    width: 50%;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+#PROFIL .two-box {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--text-color);
+    width: 100vw;
+}
+
+#PROFIL .photo-box {
+    display: flex;
+    flex: 2;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem 1rem;
+    padding: 2rem;
+}
+
+#PROFIL .photo-box img {
+    width: 20vw;
+    height: auto;
+    border: 1px solid var(--dark-color);
+}
+
+#PROFIL .photo-box h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+#PROFIL .photo-box p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    width: 90%;
+}
+
+#PROFIL .tech-box {
+    display: flex;
+    flex: 3;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 1rem 1rem;
+}
+
+#PROFIL .tech-box h4 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#PROFIL .progress {
+    width: 90%;
+    height: 2rem;
+    margin: 1rem 1rem;
+    border: 1px solid var(--dark-color);
+    border-radius: 0;
+}
+
+#PROFIL .progress-bar {
+    background-color: var(--dark-color);
+    font-size: 1rem;
+    font-family: var(--text-font);
+    text-transform: uppercase;
+}
+
+/* ----------------- PROFIL-CONTENT ----------------- */
+
+/* ----------------- PROJECT CONTENT ----------------- */
+
+#PROJECTS {
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--grey-color);
+    border-bottom: 2px solid var(--dark-color);
+}
+
+#PROJECTS h2 {
+    margin: 2rem 0rem 1rem 0rem;
+}
+
+#PROJECTS>p {
+    margin: 0rem 0rem 1rem 0rem;
+    text-align: center;
+    width: 80%;
+}
+
+#PROJECTS h4 {
+    font-size: 2rem;
+}
+
+#PROJECTS .project-box {
+    width: 100vw;
+    height: auto;
+    padding: 1rem 0rem 2rem 0rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    flex-direction: row;
+}
+
+#PROJECTS .btn {
+    border: 1px solid var(--dark-color);
+    color: var(--bright-color);
+    font-size: 1rem;
+    padding: 1rem 4rem;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: var(--dark-color);
+    letter-spacing: 1px;
+    display: inline-block;
+    font-family: var(--head-font);
+}
+
+#PROJECTS .card {
+    width: 23rem;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+#PROJECTS .card-body {
+    text-align: center;
+}
+
+#PROJECTS .progress {
+    height: 2rem;
+    margin: 1rem 0rem;
+}
+
+#PROJECTS .progress-bar {
+    background-color: green;
+}
+
+/* ----------------- PROJECT CONTENT ----------------- */
+
+/* ----------------- CONTACTS CONTENT ----------------- */
+#CONTACT {
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--bright-color);
+    border-bottom: 2px solid var(--dark-color);
+}
+
+#CONTACT h2 {
+    margin: 2rem 0rem 1rem 0rem;
+}
+
+#CONTACT .contact-box {
+    width: 100vw;
+    height: auto;
+    padding: 1rem 0rem 2rem 0rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    flex-direction: row;
+}
+
+#CONTACT .form-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 0rem 2rem;
+}
+
+#CONTACT .social-box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+#CONTACT .social-box img {
+    width: auto;
+    height: 8rem;
+    margin: 2rem 2rem;
+    border: 1px solid var(--dark-color);
+}
+
+#CONTACT form {
+    margin: 1rem 0rem;
+}
+
+#CONTACT .form-group {
+    text-align: center;
+    width: 40vw;
+}
+
+#CONTACT label {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+    font-family: var(--text-font);
+}
+
+#CONTACT .form-control {
+    border: 1px solid black;
+}
+
+/* ----------------- CONTACTS CONTENT ----------------- */
+
+/* ----------------- PRESS CONTENT ----------------- */
+#PRESS {
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--grey-color);
+    border-bottom: 2px solid var(--dark-color);
+}
+
+#PRESS h2 {
+    margin: 2rem 0rem 1rem 0rem;
+}
+
+#PRESS .press-box {
+    width: 100vw;
+    height: auto;
+    padding: 1rem 0rem 2rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #edeef0;
+}
+
+#PRESS .press-box img {
+    width: 25vw;
+    height: auto;
+    margin: 1rem 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* ----------------- PRESS CONTENT ----------------- */
+
+
+
+
+/* ----------------- HERO CONTENT ----------------- */
+
+#FOOTER {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--primary-color);
+}
+
+#FOOTER h2 {
+    font-family: var(--text-font);
+    }
+
+#FOOTER p {
+    font-family: var(--head-font);
+    }
+
+
+#FOOTER picture {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+}
+
+#FOOTER .hero-box {
+    width: 50vw;
+    height: auto;
+    padding: 5em 0rem;
+    margin: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--bright-color);
+    background-color: rgba(10, 10, 10, 0.30);
+}
+
+#FOOTER .header-btn {
+    border: 1px solid var(--bright-color);
+    color: var(--bright-color);
+    font-size: 1.8rem;
+    padding: 1rem 4rem;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: var(--dark-color);
+    z-index: 25;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-family: var(--head-font);
+}
+
+#FOOTER picture img {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+/* ----------------- HERO CONTENT ----------------- */
+
+/* ----------------- FOOTER ----------------- */
+
+footer {
+    height: auto;
+    width: 100vw;
+    padding: 0.5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--bright-color);
+    border-bottom: 2px solid var(--dark-color);
+    background-color: var(--dark-color);
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-family: var(--head-font);
+}
+
+footer .quote {
+    font-size: 0.6rem;
+    color: var(--bright-color);
+    font-family: var(--text-font);
+}
+
+/* ----------------- FOOTER ----------------- */
+
+
+
+/* ----------------- RESPONSIVE DESIGN ----------------- */
+/* ----------------- 1200px ----------------- */
+
+@media (max-width: 1200px) {
+    #PROFIL .character-box {
+        width: 25%;
+        margin: 0rem 0.5rem;
+    }
+
+    #PROFIL .photo-box img {
+        width: 30vw;
+    }
+
+    #PROFIL .gallup {
+        width: 80%;
+    }
+
+    #PROJECTS .project {
+        margin: 0rem 2rem;
+    }
+
+    #PROJECTS .card {
+        width: 15rem;
+    }
+
+    #CONTACT .social-box img {
+        width: auto;
+        height: 5rem;
+        margin: 1rem 1rem;
+    }
+
+    #CONTACT .form-group {
+        text-align: center;
+        width: 60vw;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    #PRESS .press-box img {
+        width: 40vw;
+        height: auto;
+        margin: 1rem 2rem;
+    }
+
+    #HERO-CONTENT .hero-box {
+        width: 50vw;
+    }
+}
+
+/* ----------------- 1200px ----------------- */
+
+/* ----------------- 768px ----------------- */
+@media (max-width: 768px) {
+    #HEADER .header-content h1,
+    #VIDEO-BANNER .headaer-content h2 {
+        color: var(--background-color);
+        font-size: 5rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+    }
+
+    #PROJECTS .project-box {
+        display: block;
+        padding-top: 0rem;
+        text-align: center;
+    }
+
+    #PROJECTS .card {
+        width: 18rem;
+        margin: 1rem auto;
+    }
+
+    #CONTACT .social-box img {
+        width: auto;
+        height: 5rem;
+        margin: 1rem 1rem;
+    }
+
+    #PRESS .press-box {
+        display: block;
+        text-align: center;
+    }
+
+    #PRESS .press-box img {
+        width: 80vw;
+    }
+
+    #PRESS p {
+        width: 80%;
+        margin: 0rem 1rem;
+    }
+
+    #GITHUB .hero-box {
+    width: 80vw;
+    }
+
+    #VIDEO-BANNER p {
+        width: 50vw;
+    }
+}
+
+/* ----------------- 768px ----------------- */
+
+/* ----------------- 576px ----------------- */
+@media (max-width: 576px) {
+    #HEADER .header-content h1 {
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+
+    .thin {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    #HEADER .header-btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 4rem;
+        margin-top: 2rem;
+        letter-spacing: 2px;
+    }
+
+    #PROFIL .character-box {
+        width: 40%;
+        margin: 0rem 0.5rem;
+    }
+
+    #PROFIL .two-box {
+        display: block;
+    }
+
+    #PROFIL .photo-box {
+        margin: 0rem 1rem;
+    }
+
+    #PROFIL .photo-box img {
+        width: 60vw;
+    }
+
+    #PROFIL .tech-box {
+        margin: 0rem 1rem;
+    }
+
+    #PROJECTS {
+        height: auto;
+    }
+
+    #PROJECTS .project {
+        margin: 2rem 2rem;
+    }
+
+    #PROJECTS h2 {
+        margin: 1rem 0rem 0rem 0rem;
+    }
+
+    #PROJECTS .btn {
+        font-size: 1.2rem;
+        padding: 1rem 4rem;
+    }
+
+    #CONTACT .form-group {
+        text-align: center;
+        width: 80vw;
+    }
+
+    #FOOTER .hero-box {
+    width: 80vw; 
+    }
+
+    #FOOTER h2 {
+    font-size: 1.5rem;
+    }
+}
+
+/* ----------------- 576px ----------------- */
+
+/* ----------------- 350px ----------------- */
+@media (max-width: 350px) {
+    #PROFIL .character-box {
+        width: 80%;
+        margin: 0rem 0.5rem;
+    }
+
+    #PROFIL .tech-box {
+        margin: 0rem 0.2rem;
+    }
+
+    #PROJECTS .card {
+        width: 15rem;
+    }
+}
+
+/* ----------------- 350px ----------------- */
+
+/* ----------------- RESPONSIVE DESIGN ----------------- */
