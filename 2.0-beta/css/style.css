@@ -81,6 +81,12 @@ h4 {
 
 body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-snap-type: y mandatory;
+    scroll-snap-align: center;
 }
 
 p,
@@ -104,8 +110,37 @@ span {
 
 /* _____________________________________ SETTINGS  _____________________________________ */
 
+
+
+/* ----------------- NAVIGACIA / MENU ----------------- */
+.navbar {
+    padding: 0;
+    font-family: var(--text-font);
+    font-size: 0.5rem;
+    background-color: rgba(10, 10, 10, 0.30);
+}
+
+.navbar a {
+    font-size: 0.8rem;
+    margin: 0rem 0.5rem;
+    text-transform: uppercase;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--bright-color);
+}
+
+.navbar-brand {
+    margin: 0rem 1rem;
+}
+
+/* ----------------- NAVIGACIA / MENU ----------------- */
+
+
+
 /* ----------------- HEADER SEKCIA ----------------- */
-#HEADER {
+#HEADER, 
+#VIDEO-BANNER {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -117,7 +152,8 @@ span {
     border-bottom: 2px solid var(--dark-color);
 }
 
-#HEADER::after {
+#HEADER::after,
+#VIDEO-BANNER::after {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -128,7 +164,8 @@ span {
     background: rgba(0, 0, 0, 0.3);
 }
 
-#HEADER video {
+#HEADER video,
+#VIDEO-BANNER video {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -138,7 +175,8 @@ span {
     object-fit: cover;
 }
 
-#HEADER .texture {
+#HEADER .texture,
+#VIDEO-BANNER .texture {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -148,7 +186,8 @@ span {
     background: url("../img/etc/texture.png");
 }
 
-#HEADER .header-content {
+#HEADER .header-content,
+#VIDEO-BANNER .header-content {
     position: relative;
     color: red;
     z-index: 20;
@@ -156,7 +195,8 @@ span {
     color: var(--bright-color);
 }
 
-#HEADER .header-content h1 {
+#HEADER .header-content h1,
+#VIDEO-BANNER .header-content h1 {
     color: var(--background-color);
     font-size: 7rem;
     letter-spacing: 1px;
@@ -164,7 +204,8 @@ span {
     margin-bottom: 0.5rem;
 }
 
-#HEADER .header-btn {
+#HEADER .header-btn,
+#VIDEO-BANNER .header-btn {
     border: 1px solid var(--bright-color);
     color: var(--bright-color);
     font-size: 1.8rem;
@@ -180,7 +221,25 @@ span {
     font-family: var(--head-font);
 }
 
-#HEADER .header-btn:hover {
+#VIDEO-BANNER .header-btn {
+    border: 1px solid var(--bright-color);
+    color: var(--bright-color);
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: var(--dark-color);
+    z-index: 25;
+    margin-top: 0.7rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-family: var(--head-font);
+
+}
+
+#HEADER .header-btn:hover,
+#VIDEO-BANNER .header-btn:hover {
     background-color: var(--dark-color);
     transform: scale(1.05);
     border: 1px dotted var(--bright-color);
@@ -510,6 +569,7 @@ span {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #edeef0;
 }
 
 #PRESS .press-box img {
@@ -520,6 +580,95 @@ span {
 }
 
 /* ----------------- PRESS CONTENT ----------------- */
+
+
+
+
+/* ----------------- HERO CONTENT ----------------- */
+
+#GITHUB {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--dark-color);
+}
+
+#GITHUB picture {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+}
+
+#GITHUB .hero-box {
+    width: 30vw;
+    height: auto;
+    padding: 0em 5rem;
+    margin: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--bright-color);
+    background-color: rgba(10, 10, 10, 0.30);
+}
+
+#GITHUB .header-btn {
+    border: 1px solid var(--bright-color);
+    color: var(--bright-color);
+    font-size: 1.8rem;
+    padding: 1rem 4rem;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: var(--dark-color);
+    z-index: 25;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-family: var(--head-font);
+}
+
+
+/* ----------------- HERO CONTENT ----------------- */
+
+/* ----------------- FOOTER ----------------- */
+
+footer {
+    height: auto;
+    width: 100vw;
+    padding: 0.5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--bright-color);
+    border-bottom: 2px solid var(--dark-color);
+    background-color: var(--dark-color);
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-family: var(--head-font);
+}
+
+footer .quote {
+    font-size: 0.6rem;
+    color: var(--bright-color);
+    font-family: var(--text-font);
+}
+
+/* ----------------- FOOTER ----------------- */
+
+
 
 /* ----------------- RESPONSIVE DESIGN ----------------- */
 /* ----------------- 1200px ----------------- */
@@ -566,13 +715,18 @@ span {
         height: auto;
         margin: 1rem 2rem;
     }
+
+    #HERO-CONTENT .hero-box {
+        width: 50vw;
+    }
 }
 
 /* ----------------- 1200px ----------------- */
 
 /* ----------------- 768px ----------------- */
 @media (max-width: 768px) {
-    #HEADER .header-content h1 {
+    #HEADER .header-content h1,
+    #VIDEO-BANNER .headaer-content h2 {
         color: var(--background-color);
         font-size: 5rem;
         letter-spacing: 1px;
@@ -608,6 +762,14 @@ span {
     #PRESS p {
         width: 80%;
         margin: 0rem 1rem;
+    }
+
+    #GITHUB .hero-box {
+    width: 80vw;
+    }
+
+    #VIDEO-BANNER p {
+        width: 50vw;
     }
 }
 
