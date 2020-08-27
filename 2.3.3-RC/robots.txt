@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+https://www.boris-belica.sk/sitemap.xml
